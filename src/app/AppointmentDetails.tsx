@@ -12,12 +12,6 @@ const MEMBERS = [
 const AppointmentDetails = () => {
     const router = useRouter();
 
-    function handleJoinDiscord() {
-        Linking.openURL('https://discord.com').catch(() => {
-            alert('Entrando na sala do Discord...');
-        });
-    }
-
     return (
         <SafeAreaView style={styles.container}>
 
@@ -115,7 +109,9 @@ const AppointmentDetails = () => {
                 <TouchableOpacity
                     style={styles.button}
                     activeOpacity={0.8}
-                    onPress={handleJoinDiscord}
+                    onPress={() => {
+                        alert('Entrando na sala do Discord...');
+                    }}
                 >
                     <Image
                         source={require('../../assets/images/Discord-Logo-White 1.png')}
